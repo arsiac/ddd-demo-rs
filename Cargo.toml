@@ -1,0 +1,45 @@
+[workspace]
+members = [
+    "infrastructure",
+    "domain",
+    "application",
+    "presentation",
+    "migration",
+    ".",
+]
+
+[workspace.dependencies]
+log = "0.4"
+simple_logger = "5"
+chrono = "0.4"
+async-trait = "0.1"
+thiserror = "1.0.63"
+sea-orm = { version = "1", features = [
+    "runtime-tokio-native-tls",
+    "sqlx-sqlite",
+    "macros",
+] }
+sea-orm-migration = "1"
+tokio = { version = "1", features = ["full"] }
+axum = "0.7"
+axum-extra = "0.9.3"
+clap = { version = "4.5.16", features = ["derive"] }
+regex = "1.10.6"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[package]
+name = "ddd-demo-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+infrastructure = { path = "infrastructure" }
+presentation = { path = "presentation" }
+migration = { path = "migration" }
+log.workspace = true
+simple_logger.workspace = true
+tokio.workspace = true
+sea-orm.workspace = true
+sea-orm-migration.workspace = true
+clap.workspace = true
