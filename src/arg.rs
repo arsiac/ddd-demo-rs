@@ -11,7 +11,6 @@ pub(crate) struct Args {
     #[arg(long, default_value_t = 8080, help = "Server port")]
     pub port: u32,
 
-    #[cfg(debug_assertions)]
     #[arg(long, default_value = DEFAULT_LOG_LEVEL, help = "Log level")]
     pub level: String,
 
